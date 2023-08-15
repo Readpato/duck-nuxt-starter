@@ -6,10 +6,21 @@ export default defineNuxtConfig({
       link: [{ rel: 'icon', type: 'image/jpeg', href: '~public/favicon.ico' }],
     },
   },
-  css: ['@unocss/reset/tailwind.css'],
+  css: [
+    '@unocss/reset/tailwind.css',
+  ],
   modules: [
     '@unocss/nuxt',
     '@vueuse/nuxt',
     'nuxt-vitest',
   ],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@import "@/assets/scss/main.scss";',
+        },
+      },
+    },
+  },
 })
