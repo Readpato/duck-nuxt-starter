@@ -1,4 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
+const sassAdditionalData = () => {
+  let additionalData = '@use "sass:math";'
+  additionalData += '@import "@/assets/scss/_utils.scss";'
+  additionalData += '@import "@/assets/scss/main.scss";'
+  return additionalData
+}
+
 export default defineNuxtConfig({
   app: {
     head: {
@@ -17,9 +25,7 @@ export default defineNuxtConfig({
   vite: {
     css: {
       preprocessorOptions: {
-        scss: {
-          additionalData: '@import "@/assets/scss/main.scss";',
-        },
+        scss: { additionalData: sassAdditionalData() },
       },
     },
   },
