@@ -17,6 +17,9 @@ export default defineNuxtConfig({
   css: [
     '@unocss/reset/tailwind.css',
   ],
+  devtools: {
+    enabled: true,
+  },
   modules: [
     '@unocss/nuxt',
     '@vueuse/nuxt',
