@@ -6,12 +6,12 @@
   ],
   "extensions": {
     "recommendations": [
-      "vue.volar",
       "antfu.unocss",
       "antfu.vite",
       "mattpocock.ts-error-translator",
+      "stylelint.vscode-stylelint",
+      "vue.volar",
       "yoavbls.pretty-ts-errors",
-      "stylelint.vscode-stylelint"
     ]
   },
   "settings": {
@@ -27,6 +27,15 @@
       "javascriptreact",
       "typescript",
     ],
+    // Stylelint
+    "stylelint.validate": [
+      "vue",
+      "scss",
+      "css"
+    ],
+    "stylelint.packageManager": "pnpm",
+    "scss.validate": false,
+    "css.validate": false,  
     // Explorer
     "explorer.sortOrder": "foldersNestsFiles",
     "explorer.fileNesting.enabled": true,
