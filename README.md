@@ -8,7 +8,7 @@ This is an opinionated [Nuxt3](https://nuxt.com/) starter.
 Run this to clone it and start from a clean git history.
 
 ```bash
-npx degit readpato/duck-nuxt-start my-duck-app
+npx degit readpato/duck-nuxt-starter my-duck-app
 cd my-duck-app
 pnpm i # Or whatever you are using =]
 ```
