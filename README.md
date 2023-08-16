@@ -1,42 +1,32 @@
-# Nuxt 3 Minimal Starter
+# Duck nuxt starter
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Nice to see you here!
 
-## Setup
+This is an opinionated [Nuxt3](https://nuxt.com/) starter.
 
-Make sure to install the dependencies:
-
-```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install --shamefully-hoist
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
+### How to use it
+Run this to clone it and start from a clean git history.
 
 ```bash
-npm run dev
+npx degit readpato/duck-nuxt-start my-duck-app
+cd my-duck-app
+pnpm i # Or whatever you are using =]
 ```
+### Support
 
-## Production
+You can contact me through:
 
-Build the application for production:
+- Twitter: [@patoraedler](https://twitter.com/patoraedler)
+- Email: patoraedler@gmail.com
 
-```bash
-npm run build
-```
 
-Locally preview production build:
+### Contributing
 
-```bash
-npm run preview
-```
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Please make sure to update tests as appropriate :)
+
+### Author
+
+Patrick Raedler.
+
