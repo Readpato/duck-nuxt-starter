@@ -14,32 +14,32 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@unocss/preset-attributify": "^0.55.0",
-    "@unocss/preset-icons": "^0.55.0",
-    "@unocss/preset-uno": "^0.55.0",
-    "@unocss/preset-web-fonts": "^0.55.0",
-    "@unocss/reset": "^0.55.0",
-    "cypress": "^12.17.3",
-    "typescript": "^5.1.6"
+    "@unocss/preset-attributify": "^0.57.1",
+    "@unocss/preset-icons": "^0.57.1",
+    "@unocss/preset-uno": "^0.57.1",
+    "@unocss/preset-web-fonts": "^0.57.1",
+    "@unocss/reset": "^0.57.1",
+    "cypress": "^13.3.3",
+    "typescript": "^5.2.2"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.40.2",
-    "@nuxt/devtools": "^0.8.0",
-    "@unocss/nuxt": "^0.55.0",
+    "@antfu/eslint-config": "1.0.0-beta.29",
+    "@nuxt/devtools": "^1.0.0",
+    "@unocss/nuxt": "^0.57.1",
     "@vue/test-utils": "^2.4.1",
-    "@vueuse/core": "^10.3.0",
-    "@vueuse/nuxt": "^10.3.0",
-    "eslint": "^8.46.0",
-    "happy-dom": "^10.9.0",
+    "@vueuse/core": "^10.5.0",
+    "@vueuse/nuxt": "^10.5.0",
+    "eslint": "^8.52.0",
+    "happy-dom": "^12.10.3",
     "jsdom": "^22.1.0",
-    "nuxt": "3.6.5",
-    "nuxt-vitest": "^0.10.2",
-    "sass": "^1.65.1",
-    "stylelint": "^15.10.2",
+    "nuxt": "3.8.0",
+    "nuxt-vitest": "^0.11.0",
+    "sass": "^1.69.5",
+    "stylelint": "^15.11.0",
     "stylelint-config-idiomatic-order": "^9.0.0",
     "stylelint-config-recommended-vue": "^1.5.0",
-    "stylelint-config-standard-scss": "^10.0.0",
-    "vitest": "^0.34.1",
-    "vitest-environment-nuxt": "^0.10.2"
+    "stylelint-config-standard-scss": "^11.0.0",
+    "vitest": "^0.34.6",
+    "vitest-environment-nuxt": "^0.11.0"
   }
 }
