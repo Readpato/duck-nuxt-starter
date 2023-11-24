@@ -2,19 +2,19 @@
 import { ref } from 'vue'
 
 const count = ref(0)
-const buttons = [ 
+const buttons = [
   {
     id: 'decrement',
     onClick: () => count.value--,
     order: 'order-0',
     text: '-',
   },
-{
+  {
     id: 'increment',
     onClick: () => count.value++,
     order: 'order-2',
     text: '+',
-  }
+  },
 ]
 </script>
 
