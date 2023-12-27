@@ -4,8 +4,6 @@
   "scripts": {
     "build": "nuxt build",
     "coverage": "vitest run --coverage",
-    "cy:o": "cypress open",
-    "cy:r": "cypress run",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "lint": "eslint .",
@@ -19,7 +17,6 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "2.1.0",
-    "@nuxt/devtools": "^1.0.0",
     "@nuxt/test-utils": "^3.9.0",
     "@unocss/nuxt": "^0.57.7",
     "@unocss/preset-attributify": "^0.57.7",
@@ -30,7 +27,7 @@
     "@vueuse/nuxt": "^10.6.1",
     "eslint": "^8.54.0",
     "happy-dom": "^12.10.3",
-    "nuxt": "3.8.0",
+    "nuxt": "3.9.0",
     "sass": "^1.69.5",
     "stylelint": "^15.11.0",
     "stylelint-config-idiomatic-order": "^9.0.0",
