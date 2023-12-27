@@ -23,7 +23,7 @@ export default defineNuxtConfig({
   modules: [
     '@unocss/nuxt',
     '@vueuse/nuxt',
-    'nuxt-vitest',
+    '@nuxt/test-utils/module',
   ],
   vite: {
     css: {
