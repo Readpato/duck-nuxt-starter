@@ -17,8 +17,15 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true,
   },
+  eslint: {
+    config: {
+      standalone: false,
+    },
+  },
   modules: [
+    '@nuxt/eslint',
     '@nuxt/test-utils/module',
+    '@nuxtjs/seo',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/tailwindcss',
     '@vueuse/nuxt',
