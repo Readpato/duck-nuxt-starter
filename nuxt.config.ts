@@ -2,8 +2,8 @@
 
 const sassAdditionalData = () => {
   let additionalData = '@use "sass:math";'
-  additionalData += '@import "@/assets/scss/_utils.scss";'
-  additionalData += '@import "@/assets/scss/main.scss";'
+  additionalData += '@use "@/assets/scss/_utils.scss";'
+  additionalData += '@use "@/assets/scss/main.scss";'
   return additionalData
 }
 
@@ -14,13 +14,14 @@ export default defineNuxtConfig({
       link: [{ rel: 'icon', type: 'image/jpeg', href: '~public/favicon.ico' }],
     },
   },
-  css: [
-    '@unocss/reset/tailwind.css',
-  ],
+  devtools: {
+    enabled: true,
+  },
   modules: [
-    '@unocss/nuxt',
-    '@vueuse/nuxt',
     '@nuxt/test-utils/module',
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/tailwindcss',
+    '@vueuse/nuxt',
   ],
   vite: {
     css: {
@@ -29,4 +30,5 @@ export default defineNuxtConfig({
       },
     },
   },
+  compatibilityDate: '2024-11-15',
 })
