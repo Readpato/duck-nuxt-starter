@@ -16,9 +16,8 @@ pnpm i # Or whatever you are using =]
 
 You can contact me through:
 
-- Twitter: [@patoraedler](https://twitter.com/patoraedler)
-- Email: patoraedler@gmail.com
-
+- Bluesky: [@readpato.dev](https://bsky.app/profile/readpato.dev)
+- Email: code@readpato.dev
 
 ### Contributing
 
@@ -29,4 +28,3 @@ Please make sure to update tests as appropriate :)
 ### Author
 
 Patrick Raedler.
-
