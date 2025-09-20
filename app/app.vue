@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<style scoped lang="scss">
+<style scoped>
 .app {
   min-height: 100vh;
   min-height: 100dvh;

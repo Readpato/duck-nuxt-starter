@@ -2,7 +2,7 @@
 
 Nice to see you here!
 
-This is an opinionated [Nuxt3](https://nuxt.com/) starter.
+This is an opinionated [Nuxt4](https://nuxt.com/) starter.
 
 ### How to use it
 Run this to clone it and start from a clean git history.
