@@ -6,24 +6,31 @@
     "coverage": "vitest run --coverage",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
     "postinstall": "nuxt prepare",
     "preview": "nuxt preview",
     "test": "vitest"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "5.4.1",
-    "@nuxt/test-utils": "^3.19.2",
-    "@nuxtjs/tailwindcss": "^6.14.0",
+    "@antfu/eslint-config": "7.7.3",
+    "@nuxt/test-utils": "^4.0.0",
+    "@nuxtjs/i18n": "10.2.3",
     "@vue/test-utils": "^2.4.6",
-    "@vueuse/nuxt": "^13.9.0",
-    "eslint": "^9.36.0",
-    "happy-dom": "^18.0.1",
-    "nuxt": "4.1.2",
-    "playwright-core": "^1.55.0",
-    "typescript": "^5.9.2",
-    "vitest": "^3.2.4"
+    "@vueuse/nuxt": "^14.2.1",
+    "eslint": "^10.1.0",
+    "happy-dom": "^20.8.4",
+    "nuxt": "4.4.2",
+    "oxlint": "^1.56.0",
+    "oxlint-tsgolint": "^0.17.1",
+    "playwright-core": "^1.58.2",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.0"
   },
-  "packageManager": "pnpm@9.6.0"
+  "packageManager": "pnpm@9.6.0",
+  "dependencies": {
+    "@nuxt/ui": "^4.5.1",
+    "@tanstack/vue-query": "^5.95.0",
+    "tailwindcss": "^4.2.2"
+  }
 }

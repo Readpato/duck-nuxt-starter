@@ -1,7 +1,7 @@
 <template>
-  <div class="app">
+  <UApp class="app">
     <DuckWelcome />
-  </div>
+  </UApp>
 </template>
 
 <style scoped>

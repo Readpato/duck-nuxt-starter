@@ -1,41 +1,31 @@
 <script setup lang="ts">
 const count = ref(0)
-const buttons = [
-  {
-    id: 'decrement',
-    onClick: () => count.value--,
-    order: 'order-0',
-    text: '-',
-  },
-  {
-    id: 'increment',
-    onClick: () => count.value++,
-    order: 'order-2',
-    text: '+',
-  },
-]
+
+function decrement() {
+  count.value--
+}
+
+function increment() {
+  count.value++
+}
 </script>
 
 <template>
-  <div
-    aria-label="counter"
-    class="flex justify-center items-center gap-4 mt-2 text-center"
-  >
-    <button
-      v-for="{ id, onClick, order, text } in buttons" :key="id"
-      :aria-label="`${id}-counter`"
-      :class="`${order}`"
-      :data-test="`${id}-cta`"
-      class="size-8 hover:text-black hover:bg-white border border-green-500 rounded"
-      @click="onClick"
-    >
-      {{ text }}
-    </button>
-    <span
-      class="w-fit min-w-5 order-1"
-      aria-label="counter-value"
-      data-test="counter-value"
-    >{{ count }}
+  <div class="flex justify-center items-center gap-4 mt-2 text-center">
+    <UButton
+      color="neutral"
+      icon="i-lucide-minus"
+      variant="ghost"
+      @click="decrement"
+    />
+    <span class="text-xl font-semibold">
+      {{ count }}
     </span>
+    <UButton
+      color="neutral"
+      icon="i-lucide-plus"
+      variant="ghost"
+      @click="increment"
+    />
   </div>
 </template>
