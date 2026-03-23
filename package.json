@@ -1,6 +1,7 @@
 {
   "type": "module",
   "private": true,
+  "packageManager": "pnpm@9.6.0",
   "scripts": {
     "build": "nuxt build",
     "coverage": "vitest run --coverage",
@@ -11,6 +12,16 @@
     "postinstall": "nuxt prepare",
     "preview": "nuxt preview",
     "test": "vitest"
+  },
+  "dependencies": {
+    "@nuxt/ui": "^4.5.1",
+    "@tanstack/vue-query": "^5.95.0",
+    "@trpc/client": "^11.15.0",
+    "@trpc/server": "^11.15.0",
+    "superjson": "^2.2.6",
+    "tailwindcss": "^4.2.2",
+    "trpc-nuxt": "^2.0.2",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@antfu/eslint-config": "7.7.3",
@@ -26,11 +37,5 @@
     "playwright-core": "^1.58.2",
     "typescript": "^5.9.3",
     "vitest": "^4.1.0"
-  },
-  "packageManager": "pnpm@9.6.0",
-  "dependencies": {
-    "@nuxt/ui": "^4.5.1",
-    "@tanstack/vue-query": "^5.95.0",
-    "tailwindcss": "^4.2.2"
   }
 }
