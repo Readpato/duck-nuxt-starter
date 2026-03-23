@@ -1,5 +1,9 @@
 <script setup lang="ts">
 const title = $t('welcome')
+
+const { $trpc } = useNuxtApp()
+
+const { data: hello } = await $trpc.hello.useQuery({ text: 'client' })
 </script>
 
 <template>
@@ -9,5 +13,6 @@ const title = $t('welcome')
       {{ title }}
     </h1>
     <DuckCounter />
+    {{ hello?.greeting }}
   </main>
 </template>
