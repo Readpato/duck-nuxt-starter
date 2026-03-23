@@ -22,7 +22,7 @@ export default antfu(
 
     typescript: true,
     vue: true,
-    jsonc: false,
+    jsonc: true,
     yaml: false,
 
     rules: {
