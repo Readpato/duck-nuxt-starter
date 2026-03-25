@@ -1,9 +1,10 @@
 import { useQuery } from '@tanstack/vue-query'
 
-export function getGreeting(greeting: string) {
+/** Fetches the total number of users from the database. */
+export function getUserCount() {
   const { $trpc } = useNuxtApp()
   return useQuery({
-    queryFn: () => $trpc.hello.query({ text: greeting }),
-    queryKey: ['user', 'getCount'],
+    queryFn: () => $trpc.example.query(),
+    queryKey: ['users', 'count'],
   })
 }

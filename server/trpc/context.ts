@@ -6,8 +6,8 @@ import type { H3Event } from 'h3'
  */
 export function createContext(event: H3Event) {
   return {
-    session: event.context.session,
     drizzle: event.context.drizzle,
+    session: event.context.session,
   }
 }
 

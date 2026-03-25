@@ -1,16 +1,12 @@
+import { users } from '#server/database/schema'
 import { publicProcedure } from '#server/trpc/procedure'
 import { router } from '#server/trpc/trpc'
-import { z } from 'zod'
 
 export const appRouter = router({
-  hello: publicProcedure
-    .input(
-      z.object({ text: z.string() }),
-    )
-    .query((opts) => {
-      return {
-        greeting: `hello ${opts.input.text}`,
-      }
+  example: publicProcedure
+    .query(async ({ ctx }) => {
+      const userCount = await ctx.drizzle.$count(users)
+      return { userCount }
     }),
 })
 

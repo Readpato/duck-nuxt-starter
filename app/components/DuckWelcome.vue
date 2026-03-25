@@ -1,9 +1,9 @@
 <script setup lang="ts">
+import { getUserCount } from '~/trpc/query'
+
 const title = $t('welcome')
 
-const { $trpc } = useNuxtApp()
-
-const { data: hello } = await $trpc.hello.useQuery({ text: 'client' })
+const { data: hello } = getUserCount()
 </script>
 
 <template>
@@ -13,6 +13,8 @@ const { data: hello } = await $trpc.hello.useQuery({ text: 'client' })
       {{ title }}
     </h1>
     <DuckCounter />
-    {{ hello?.greeting }}
+    <p class="mt-2 text-sm text-white/50">
+      {{ hello?.userCount }} users in database
+    </p>
   </main>
 </template>
