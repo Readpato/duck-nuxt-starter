@@ -23,7 +23,7 @@ export default antfu(
     typescript: true,
     vue: true,
     jsonc: true,
-    yaml: false,
+    yaml: true,
 
     rules: {
       'no-console': ['error', {
