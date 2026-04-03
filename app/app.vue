@@ -1,6 +1,6 @@
 <template>
   <UApp class="app">
-    <DuckWelcome />
+    <NuxtPage />
   </UApp>
 </template>
 

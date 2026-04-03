@@ -1,3 +1,3 @@
 export default defineEventHandler((event) => {
-  event.context.drizzle = getDrizzle()
+  return getAuth.handler(toWebRequest(event))
 })

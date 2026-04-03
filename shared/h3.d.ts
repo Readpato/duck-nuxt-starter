@@ -7,10 +7,10 @@
  *
  * @see https://nuxt.com/docs/guide/concepts/typescript#augmenting-types-with-project-references
  */
-import type { DrizzleInstance } from '#server/utils/getDrizzle'
+import type { getAuth } from '#server/utils/auth'
 
 declare module 'h3' {
   interface H3EventContext {
-    drizzle: DrizzleInstance
+    session: Awaited<ReturnType<typeof getAuth.api.getSession>> | null
   }
 }

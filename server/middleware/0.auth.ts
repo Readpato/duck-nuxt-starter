@@ -1,3 +1,6 @@
-export default defineEventHandler((event) => {
-  event.context.session = { session: 'this is a session' }
+export default defineEventHandler(async (event) => {
+  const session = await getAuth.api.getSession({
+    headers: event.headers,
+  })
+  event.context.session = session
 })
