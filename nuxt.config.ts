@@ -6,15 +6,19 @@ export default defineNuxtConfig({
       link: [{ rel: 'icon', type: 'image/jpeg', href: '~public/favicon.ico' }],
     },
   },
-
+  build: {
+    transpile: [
+      'trpc-nuxt',
+    ],
+  },
   devtools: {
     enabled: true,
   },
   i18n: {
     defaultLocale: 'en',
     locales: [
-      { code: 'en', name: 'English', file: 'en.json' }
-    ]
+      { code: 'en', name: 'English', file: 'en.json' },
+    ],
   },
   modules: [
     '@nuxt/test-utils/module',
