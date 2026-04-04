@@ -7,6 +7,6 @@ export const getAuth = betterAuth({
     provider: 'pg',
   }),
   emailAndPassword: {
-    enabled: true
-  }
+    enabled: true,
+  },
 })
