@@ -1,10 +1,10 @@
 // @vitest-environment nuxt
 
+import { DuckWelcome } from '#components'
 import { mountSuspended } from '@nuxt/test-utils/runtime'
 import { expect, it } from 'vitest'
-import DuckWelcome from '~/components/DuckWelcome.vue'
 
 it('my test', async () => {
   const component = await mountSuspended(DuckWelcome)
-  expect(component.text()).toContain('Duck nuxt starter')
+  expect(component.text()).toContain('Duck Nuxt Starter')
 })
