@@ -20,8 +20,8 @@ async function handleSignUp() {
     loading.value = false
     return
   }
-
-  navigateTo('/')
+  clearNuxtData()
+  await navigateTo('/')
 }
 </script>
 
@@ -85,7 +85,7 @@ async function handleSignUp() {
               type="submit"
               block
               size="md"
-              :loading="loading"
+              :loading
               :trailing="false"
               class="mt-2"
             >

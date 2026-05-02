@@ -4,7 +4,7 @@ import { getUserCount } from '~/trpc/query'
 
 const title = $t('welcome')
 
-const { data: hello } = getUserCount()
+const { data: userCount } = getUserCount()
 
 const greetName = ref('')
 const { data: greetResponse, mutate: greet, isPending: isGreeting } = useGreetMutation()
@@ -41,8 +41,8 @@ function handleGreet() {
 
           <DuckCounter />
 
-          <p v-if="hello?.userCount">
-            {{ hello?.userCount }} users in database
+          <p v-if="userCount">
+            {{ userCount }} users in database
           </p>
           <p v-else>
             No users registered as of yet

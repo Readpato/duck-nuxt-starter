@@ -7,10 +7,12 @@
  *
  * @see https://nuxt.com/docs/guide/concepts/typescript#augmenting-types-with-project-references
  */
-import type { getAuth } from '#server/utils/auth'
+import type { auth } from '#server/utils/auth'
+import type getPrisma from '~~/server/utils/getPrisma'
 
 declare module 'h3' {
   interface H3EventContext {
-    session: Awaited<ReturnType<typeof getAuth.api.getSession>> | null
+    session: Awaited<ReturnType<typeof auth.api.getSession>> | null
+    prisma: Awaited<ReturnType<typeof getPrisma>>
   }
 }
