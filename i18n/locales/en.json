@@ -1,3 +1,20 @@
 {
-  "welcome": "Duck Nuxt Starter"
+  "auth.form.login.account.prompt": "Already have an account? Login here",
+  "auth.form.login.description": "Enter your credentials to access your account.",
+  "auth.form.login.submit.label": "Login",
+  "auth.form.login.title": "Login",
+  "auth.form.register.account.prompt": "Don't have an account? Sign up here",
+  "auth.form.register.description": "Enter your credentials to create a new account.",
+  "auth.form.register.submit.label": "Register",
+  "auth.form.register.title": "Register",
+  "common.error.label": "Error",
+  "form.field.email.error.invalid": "Invalid email address",
+  "form.field.email.label": "Email",
+  "form.field.email.placeholder": "Enter your email",
+  "form.field.name.label": "Name",
+  "form.field.name.placeholder": "Enter your name",
+  "form.field.password.label": "Password",
+  "form.field.password.placeholder": "Enter your password",
+  "form.validation.minimum.length": "Must be at least {length} characters",
+  "form.validation.required": "{field} is required"
 }

@@ -3,7 +3,7 @@ import { router } from '#server/trpc/trpc'
 import { z } from 'zod'
 
 export const appRouter = router({
-  example: publicProcedure
+  getUserCount: publicProcedure
     .query(async ({ ctx }) => {
       return await ctx.prisma.user.count()
     }),

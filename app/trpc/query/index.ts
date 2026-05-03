@@ -4,7 +4,7 @@ import { useQuery } from '@tanstack/vue-query'
 export function getUserCount() {
   const { $trpc } = useNuxtApp()
   return useQuery({
-    queryFn: () => $trpc.example.query(),
+    queryFn: () => $trpc.getUserCount.query(),
     queryKey: ['users', 'count'],
   })
 }

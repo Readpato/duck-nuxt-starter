@@ -8,8 +8,8 @@ This is an opinionated [Nuxt 4](https://nuxt.com/) starter with a full-stack set
 
 - **[Nuxt 4](https://nuxt.com/)** with devtools enabled
 - **[tRPC](https://trpc.io/)** via `trpc-nuxt` for end-to-end typesafe APIs (queries and mutations)
-- **[Drizzle ORM](https://orm.drizzle.team/)** with PostgreSQL (`postgres` driver)
-- **[Better Auth](https://www.better-auth.com/)** for authentication (email/password) with Drizzle adapter
+- **[Prisma](https://www.prisma.io/)** v7 with PostgreSQL via `@prisma/adapter-pg`
+- **[Better Auth](https://www.better-auth.com/)** for authentication (email/password) with Prisma adapter
 - **[Nuxt UI](https://ui.nuxt.com/)** v4 with Tailwind CSS v4 and Lucide icons
 - **[TanStack Query](https://tanstack.com/query)** (`@tanstack/vue-query`) for async state management
 - **[VueUse](https://vueuse.org/)** core and router utilities
@@ -38,10 +38,13 @@ DATABASE_URL=postgresql://user:password@localhost:5432/mydb
 ### Database
 
 ```bash
-pnpm db:generate  # Generate migrations from schema changes
-pnpm db:migrate   # Apply migrations
-pnpm db:studio    # Open Drizzle Studio
+pnpm db:generate  # Regenerate the Prisma client
+pnpm db:migrate   # Create and apply a migration in development (prisma migrate dev)
+pnpm db:studio    # Open Prisma Studio
+pnpm db:format    # Format schema.prisma
 ```
+
+For production deploys, run `pnpm exec prisma migrate deploy` to apply pending migrations.
 
 ### Development
 
@@ -65,12 +68,14 @@ app/
   app.config.ts   # Nuxt UI icon configuration
 server/
   api/auth/       # Better Auth catch-all route
-  middleware/      # Auth middleware
-  schemas/        # Drizzle table schemas (user, session, account, verification)
+  middleware/     # Auth middleware
   trpc/           # tRPC router, context, and procedures
-  utils/          # Auth, Drizzle instance, server env helpers
+  utils/          # Auth, Prisma instance (getPrisma), server env helpers
 shared/           # Shared type augmentations (H3 context)
-drizzle/          # Generated SQL migrations
+prisma/
+  schema.prisma   # Prisma schema (user, session, account, verification)
+  migrations/     # Generated SQL migrations
+  client/         # Generated Prisma client output
 ```
 
 ## Support
