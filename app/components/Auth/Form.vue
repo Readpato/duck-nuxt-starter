@@ -4,8 +4,8 @@ import * as z from 'zod'
 
 const toast = useToast()
 
-type AuthenticationMode = 'login' | 'register'
-const authMode = ref<AuthenticationMode>('login')
+const authMode = shallowRef<'login' | 'register'>('login')
+const isLoading = shallowRef(false)
 
 const baseFormSchema = z.object({
   email: z.email($t('form.field.email.error.invalid')),
@@ -39,6 +39,7 @@ const fields = computed<AuthFormField[]>(() =>
 )
 
 async function onSubmit(payload: FormSubmitEvent<LoginSchema | RegisterSchema>) {
+  isLoading.value = true
   const { error } = authMode.value === 'login'
     ? await authClient.signIn.email(baseFormSchema.parse(payload.data))
     : await authClient.signUp.email(registerFormSchema.parse(payload.data))
@@ -53,6 +54,7 @@ async function onSubmit(payload: FormSubmitEvent<LoginSchema | RegisterSchema>) 
   }
   // Invalidate cached session so middleware's useSession(useFetch) refetches
   await refreshNuxtData()
+  isLoading.value = false
   navigateTo('/')
 }
 </script>
@@ -62,6 +64,7 @@ async function onSubmit(payload: FormSubmitEvent<LoginSchema | RegisterSchema>) 
     <UAuthForm
       :description="$t(`auth.form.${authMode}.description`)"
       :fields
+      :loading="isLoading"
       :schema="formSchema"
       :submit="{ label: $t(`auth.form.${authMode}.submit.label`) }"
       :title="$t(`auth.form.${authMode}.title`)"
@@ -69,7 +72,11 @@ async function onSubmit(payload: FormSubmitEvent<LoginSchema | RegisterSchema>) 
       @submit="onSubmit"
     />
     <USeparator />
-    <UButton variant="link" class="mx-auto" @click="authMode = authMode === 'login' ? 'register' : 'login'">
+    <UButton
+      variant="link"
+      class="mx-auto"
+      @click="authMode = authMode === 'login' ? 'register' : 'login'"
+    >
       {{ $t(`auth.form.${authMode === 'login' ? 'register' : 'login'}.account.prompt`) }}
     </UButton>
   </UPageCard>
