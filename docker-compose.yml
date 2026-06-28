@@ -1,3 +1,4 @@
+name: 'duck-nuxt-starter'
 services:
   postgres:
     image: postgres:17
