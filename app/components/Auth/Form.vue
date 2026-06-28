@@ -60,12 +60,12 @@ async function onSubmit(payload: FormSubmitEvent<LoginSchema | RegisterSchema>) 
 <template>
   <UPageCard>
     <UAuthForm
-      :schema="formSchema"
-      :title="$t(`auth.form.${authMode}.title`)"
       :description="$t(`auth.form.${authMode}.description`)"
-      icon="i-lucide-user"
       :fields
+      :schema="formSchema"
       :submit="{ label: $t(`auth.form.${authMode}.submit.label`) }"
+      :title="$t(`auth.form.${authMode}.title`)"
+      icon="i-lucide-user"
       @submit="onSubmit"
     />
     <USeparator />
