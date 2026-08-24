@@ -6,6 +6,7 @@ const toast = useToast()
 
 const authMode = shallowRef<'login' | 'register'>('login')
 const isLoading = shallowRef(false)
+const { options } = useAuth()
 
 const baseFormSchema = z.object({
   email: z.email($t('form.field.email.error.invalid')),
@@ -50,12 +51,11 @@ async function onSubmit(payload: FormSubmitEvent<LoginSchema | RegisterSchema>) 
       description: error.message,
       color: 'error',
     })
+    isLoading.value = false
     return
   }
-  // Invalidate cached session so middleware's useSession(useFetch) refetches
-  await refreshNuxtData()
-  isLoading.value = false
-  navigateTo('/')
+  // The $sessionSignal listener in useAuth() refetches the session.
+  await navigateTo(options.redirectUserTo)
 }
 </script>
 

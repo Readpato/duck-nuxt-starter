@@ -1,15 +1,49 @@
-export default defineNuxtRouteMiddleware(async (to) => {
-  const { data: session } = await authClient.useSession(useFetch)
+import { defu } from 'defu'
 
-  // Unauthenticated -> Redirects to register
-  const publicRoutes = ['/auth']
-  const isPublic = publicRoutes.includes(to.path)
+type MiddlewareOptions = false | {
+  only?: 'guest' | 'user'
+  redirectUserTo?: string
+  redirectGuestTo?: string
+}
 
-  if (!isPublic && !session.value) {
-    return navigateTo('/auth')
+declare module '#app' {
+  interface PageMeta {
+    auth?: MiddlewareOptions
   }
-  // Authenticated -> Redirects to index
-  if (isPublic && session.value) {
-    return navigateTo('/')
+}
+
+declare module 'vue-router' {
+  interface RouteMeta {
+    auth?: MiddlewareOptions
+  }
+}
+
+export default defineNuxtRouteMiddleware(async (to) => {
+  // Routes opting out of auth entirely, e.g. `definePageMeta({ auth: false })`.
+  if (to.meta?.auth === false) {
+    return
+  }
+
+  const { loggedIn, options, fetchSession } = useAuth()
+  const { only, redirectUserTo, redirectGuestTo } = defu(to.meta?.auth, options)
+
+  // Guest-only routes (e.g. `/auth`) redirect authenticated users away.
+  if (only === 'guest' && loggedIn.value) {
+    if (to.path === redirectUserTo) {
+      return
+    }
+    return navigateTo(redirectUserTo)
+  }
+
+  // Ensure the session is fresh on the client before deciding to redirect.
+  if (import.meta.client) {
+    await fetchSession()
+  }
+
+  if (!loggedIn.value) {
+    if (to.path === redirectGuestTo) {
+      return
+    }
+    return navigateTo(redirectGuestTo)
   }
 })

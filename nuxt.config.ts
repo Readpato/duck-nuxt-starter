@@ -20,6 +20,14 @@ export default defineNuxtConfig({
       { code: 'en', name: 'English', file: 'en.json' },
     ],
   },
+  runtimeConfig: {
+    public: {
+      auth: {
+        redirectUserTo: '/',
+        redirectGuestTo: '/auth',
+      },
+    },
+  },
   modules: [
     '@nuxt/test-utils/module',
     '@nuxt/ui',
